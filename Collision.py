@@ -27,9 +27,7 @@ class GameView:
         for i in self._objects:
             if i.x <= 0 or i.x >= WIDTH - SIZE:
                 i.x_velocity = -1 * i.x_velocity
-                i.y_velocity = 1 * i.y_velocity
             if i.y <= 0 or i.y >= HEIGHT - SIZE:
-                i.x_velocity = 1 * i.x_velocity
                 i.y_velocity = -1 * i.y_velocity
             i.x += i.x_velocity
             i.y += i.y_velocity
