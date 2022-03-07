@@ -1,7 +1,7 @@
 import pygame
 import random
 
-FPS = 60
+FPS = 120
 SIZE = 30
 WIDTH = 1080
 HEIGHT = 920
@@ -21,15 +21,15 @@ class GameView:
         self._objects = []
 
     def add_object(self, x, y):
-        self._objects.append(Object(x, y, random.randint(-5, 5), random.randint(-5, 5)))
-
+        self._objects.append(Object(x, y, random.randint(-10, 10), random.randint(-10, 10)))
+    
     def recoordinate(self):
         for i in self._objects:
             if i.x <= 0 or i.x >= WIDTH - SIZE:
                 i.x_velocity = -1 * i.x_velocity
-                i.y_velocity = -1 * i.y_velocity
+                i.y_velocity = 1 * i.y_velocity
             if i.y <= 0 or i.y >= HEIGHT - SIZE:
-                i.x_velocity = -1 * i.x_velocity
+                i.x_velocity = 1 * i.x_velocity
                 i.y_velocity = -1 * i.y_velocity
             i.x += i.x_velocity
             i.y += i.y_velocity
